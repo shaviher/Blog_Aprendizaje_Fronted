@@ -12,10 +12,8 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  position: relative;
-  z-index: 0;
   height: 100vh;
-  color: #e0e0e0;
+  color: #59222c;
 }
 
 /* ===================== CONTAINER ===================== */
@@ -47,7 +45,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 999;
-  background-color: #2d2d2d;
+  opacity: 0.9;
 }
 
 .navbar-container {
@@ -57,12 +55,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2d2d2d;
+  background-color: #59222c;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-}
-
-.navbar {
-  width: 100%;
 }
 
 .navbar-nav {
@@ -72,16 +66,18 @@ body {
 }
 
 .nav-button {
-  position: relative;
-  color: #f0f0f0;
-  font-family: "Quicksand", sans-serif;
-  font-weight: 600;
+  color: #f2f2f2;
+  font-weight: 700;
   cursor: pointer;
   transition: color 0.5s ease;
 }
 
 .nav-button:hover {
-  color: #119822;
+  color: #d98b2b;
+}
+
+.dropdown {
+  position: relative;
 }
 
 
@@ -90,85 +86,147 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #152614;
+  background-color: #d98b2b;
   padding: 0.5rem 0;
   border-radius: 6px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   min-width: 200px;
   z-index: 1000;
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.dropdown-content ul {
+  list-style: none;
+}
+
+.dropdown-content li {
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content li:hover {
+  background-color: #f2b33d;
+  color: #59222c;
+}
+
 /* ===================== PUBLICACIONES ===================== */
 .publication-card {
-  background-color: rgba(30, 30, 30, 0.95);
+  background-color: #8c1c25;
   color: #eaeaea;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
   transition: transform 0.3s ease;
+  opacity: 0.85;
 }
 
 .publication-card:hover {
   transform: scale(1.05);
 }
 
+.publication-detail {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: rgba(30, 30, 30, 0.95);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  color: #eaeaea;
+}
+
 .publication-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
   text-align: center;
+  color: #f2b33d;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease;
 }
 
 .publication-title:hover {
-  color: #31CB00;
+  color: #a63f03;
 }
 
 .publication-description {
+  font-size: 1.1rem;
   color: #ccc;
-  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .publication-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
-  font-size: 0.85rem;
-  color: #31CB00;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
-.publication-meta span {
-  background-color: #2b2b2b;
-  color: #31CB00;
+.meta-item {
+  background-color: #fffefd;
+  color: #59222c;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
-/* ===================== COMENTARIOS ===================== */
-.comentario {
+/* ================== COMENTARIOS ================== */
+.comments-section {
+  margin-top: 3rem;
+  border-top: 1px solid #444;
+  padding-top: 2rem;
+}
+
+.comments-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #f2b33d;
+  text-align: center;
+}
+
+.no-comments {
+  color: #aaa;
+  text-align: center;
+  font-style: italic;
+}
+
+.comments-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.comment {
   background-color: rgba(60, 60, 60, 0.9);
-  color: #e0e0e0;
   padding: 1rem;
   border-radius: 8px;
+  color: #e0e0e0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  margin: 1rem 0;
 }
 
-.comentario:hover {
-  background-color: rgba(80, 80, 80, 0.9);
+.comment strong {
+  color: #f2b33d;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-.comentario strong {
-  color: #119822;
-}
-
-/* ===================== FORMULARIOS ===================== */
+/* ===================== FORMULARIO DE COMENTARIOS ===================== */
 .form-title {
   font-size: 1.6rem;
   font-weight: 700;
-  color: #119822;
+  color: #f2b33d;
   margin: 3rem 0 1.5rem;
   text-align: center;
 }
@@ -187,23 +245,19 @@ body {
 
 .form-label {
   font-weight: 600;
-  color: #31CB00;
+  color: #f2b33d;
 }
 
 .form-input,
-.form-textarea,
-.form-group input,
-.form-group textarea {
+.form-textarea {
   width: 100%;
   padding: 0.85rem 1rem;
   border: 1px solid #444;
   border-radius: 8px;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
-  color: #eaeaea;
   background-color: #1e1e1e;
+  color: #d98b2b;
+  font-size: 1rem;
   transition: border-color 0.3s;
-  margin: 1rem 0;
 }
 
 .form-textarea {
@@ -212,17 +266,14 @@ body {
 }
 
 .form-input:focus,
-.form-textarea:focus,
-.form-group input:focus,
-.form-group textarea:focus {
+.form-textarea:focus {
   outline: none;
-  border-color: #119822;
-  box-shadow: 0 0 6px #31CB00;
+  border-color: #f2b33d;
+  box-shadow: 0 0 6px #8c1c25;
 }
 
-.submit-button,
-button[type="submit"] {
-  background-color: #31CB00;
+.submit-button {
+  background-color: #d98b2b;
   color: white;
   padding: 0.8rem 1.4rem;
   font-weight: 600;
@@ -232,19 +283,27 @@ button[type="submit"] {
   transition: background-color 0.3s ease;
 }
 
-.submit-button:hover,
-button[type="submit"]:hover {
-  background-color: #28a700;
+.submit-button:hover {
+  background-color: #59222c;
 }
 
 /* ===================== ENLACES ===================== */
 a {
-  color: #31CB00;
+  color: #a63f03;
   text-decoration: none;
+  background-color: #d98b2b;
+  padding: 0.8rem 1.4rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  gap: 5rem;
+  margin: 0.2rem; /* Añade un margen alrededor */
+  margin-top: 2rem; /* separa hacia abajo */
+   display: inline-block;
 }
+
 
 a:hover {
+  color: #59222c;
   text-decoration: underline;
-  color: #44e141;
 }
-
